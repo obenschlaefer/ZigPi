@@ -1,6 +1,6 @@
 # beepi
 
-### Welcome to the Beepi-Project! - Willkomen beim Beepi-Projekt!
+### Welcome to the Beepi-Project! - Willkommen beim Beepi-Projekt!
 ![IMG_2459](https://github.com/obenschlaefer/beepi/assets/79227566/d1ced44a-cbcc-4d95-84e9-95ad60ac32a1)
 
 #####################

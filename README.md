@@ -1,6 +1,7 @@
 # beepi
 
-### Welcome to the Beepi-Project! - Willkommen beim Beepi-Projekt!
+**Welcome to the Beepi-Project! - Willkommen beim Beepi-Projekt!**
+
 ![IMG_2459](https://github.com/obenschlaefer/beepi/assets/79227566/d1ced44a-cbcc-4d95-84e9-95ad60ac32a1)
 
 #####################
@@ -30,7 +31,7 @@ Here you will find instructions on how to install Zigbee2mqtt on a Raspberry Pi.
 7. Install Heimdall (Docker Container
 
 
-## 1. - Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)
+# 1. - Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)
 
 Um den Versionstand des Bootloaders herauszufinden muss man zuerst ganz normal von Micro-SD Karte booten.
 Dann per SSH verbinden und folgende Befehle ausführen
@@ -61,7 +62,9 @@ sudo apt-get update
 sudo apt-get full-upgrade
 ```
 
-## 2. - Docker installieren
+# 2. - Docker installieren
+
+
 
 Verbindung per SSH 
 
@@ -90,7 +93,9 @@ Docker testen
 docker run hello-world
 ```
 
-## 3. - Portainer installieren (Docker Conatiner)
+
+
+# 3. - Portainer installieren (Docker Conatiner)
 
 Docker-Volume für Portainer erstellen
 ```
@@ -105,9 +110,10 @@ docker ps
 Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten. Benutzer & Passwort anlegen!
 
 
-## 4. - Mosquitto installieren (Docker Container)
 
-### 4.1 - Verzeichnisse und config-file anlegen:
+# 4. - Mosquitto installieren (Docker Container)
+
+## 4.1 - Verzeichnisse und config-file anlegen:
 
 ```
 cd
@@ -129,17 +135,17 @@ allow_anonymous true
 Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
 ___
 
-### 4.2 - Portainer Container anlegen und konfigurieren 
+## 4.2 - Portainer Container anlegen und konfigurieren 
 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
-**Neuen Container erstellen - Add Container:**
+### **4.2.1 - Neuen Container erstellen - Add Container:**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/132c130f-d9e1-4a49-b9ee-ba88e748e02d)
 ___
-**Container-Einstellungen:**
+### **4.2.2 - Container-Einstellungen:**
 
-**Name für Container vergeben:** 	mosquitto
+**Name:** 	Mosquitto
 
 **Image:**  	eclipse-mosquitto:latest
 
@@ -149,7 +155,7 @@ ___
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
 ___
-### **Volumes:**
+### **4.2.3 - Volumes:**
 
 **Container**: /mosquitto --> **Host:** /home/pi/mosquitto -- >**Bind**
 
@@ -161,15 +167,20 @@ ___
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
 ___
 
-### **Restart policy:** Always
+### **4.2.4 - Restart policy:** 
+Always
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
 ___
 
-### **Deploy Container**
+### **4.2.5 - Deploy Container**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/bb414b08-c9d6-4f39-ae37-ecdcbeb5acc1)
 
+## **4.3 - Mosquitto testen mit MQTT-Explorer**
+
+
+## **4.4 - Passwortschutz (authentication) einrichten**
 
 
 

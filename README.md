@@ -144,15 +144,23 @@ Ports:  _ _1883 - 1883 TCP_ _
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
 
-Volumes:
-Container: _ _/mosquitto_ _		    Host: _ _/home/pi/mosquitto_ _		    Bind
-Container: _ _/mosquitto/data_ _	Host: _ _/home/pi/mosquitto/data_ _	  Bind
-Container: _ _/mosquitto/log_ _	  Host: _ _/home/pi/mosquitto/log_ _  	Bind
+**Volumes:**
+
+**Container**: /mosquitto		
+**Host:** /home/pi/mosquitto		
+**Bind**
+
+**Container:** /mosquitto/data		
+**Host:** /home/pi/mosquitto/data	
+**Bind**
+
+**Container:** /mosquitto/log		
+**Host:** /home/pi/mosquitto/log	
+**Bind**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
 
-Restart policy:
-_ _Always_ _
+**Restart policy:** Always
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
 

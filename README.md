@@ -167,21 +167,76 @@ ___
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
 ___
 
+
 ### **4.2.4 - Restart policy:** 
 Always
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
 ___
 
+
 ### **4.2.5 - Deploy Container**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/bb414b08-c9d6-4f39-ae37-ecdcbeb5acc1)
+___
 
 ## **4.3 - Mosquitto testen mit MQTT-Explorer**
+
+- Hier den MQTT-Explorer downloaden: https://mqtt-explorer.com/
+- MQTT-Explorer starten
+
+Eingabe von **Host** (IP-Adresse des Raspberry PI) und **Port** (wie hier in der Anleitung: 1883)
+
+Zunächst kein Username und Passwort eingeben (wir haben ja noch kein ```User/Password``` in der ```mosquitto.conf``` angegeben)
+
+<img width="756" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/dee0ca4b-f3a5-4e7c-bc8f-cce5980272f0">
+
+Wenn sich der MQTT-Explorer erfolgreich mit dem Broker verbindet, kann das Programm wieder geschlossen werden. Das Ganze war nur ein erster Verbindungstest. Im nächsten Schritt legen wir **User** und **Password** fest.	
 
 
 ## **4.4 - Passwortschutz (authentication) einrichten**
 
+- Im Mosquitto Container auf die Console gehen
+
+<img width="817" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/5cd7803a-75ef-4b5f-bdfa-f3c894ca22d1">
+
+- im nächten Schritt ```/bin/sh``` auswählen und auf ```Connect``` klicken.
+
+<img width="348" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/da7578bb-c46d-401f-b2f5-f138b9f17a0c">
+
+- Die ```Console``` des Containers öffnet sich. Folgende Zeilen eigeben:
+
+```mosquitto_passwd -c /mosquitto/config/password.txt admin```
+
+- Dieser Befehl legt den Benutzer (User) ```admin``` an. Wenn ein anderer Name gewünscht ist, den Befehl entsprechend ändern!
+
+- Mit ```Enter``` bestätigwn und dann das gewünschte ```Password``` engeben. Die Eingabe erfolgt verdeckt - d.h. sie wird nicht angezeigt.
+
+<img width="457" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/0d0c9091-2dee-44e9-8b7e-3f40059d6f43">
+
+- im nächten Schritt auf ```Disconnect``` klicken, um die Container-Console zu schließen.
+- Anschließend per ```SSH``` mit dem Raspberry Pi verbinden, und in der Console folgenden Befehle eingeben:
+
+```
+cd /mosquitto/config
+sudo nano mosquitto.conf
+```
+
+Der Editor Nano öffnet die schon erstellte```mosquitto.conf```. Diese wie folgt ändern:
+
+```
+persistence true
+persistence_location /mosquitto/data/
+log_dest file /mosquitto/log/mosquitto.log
+listener 1883
+
+## Authentication ##
+allow_anonymous false
+password_file /mosquitto/config/password.txt
+```
+Die ```mosquitto.conf``` wird hier um die ```Authentication``` erweitert, und so schlussendlich sicher gemacht.
+
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen. So wird die vorhandene ```mosquitto.conf``` mit den Änderunghen übwerschrieben.
 
 
 

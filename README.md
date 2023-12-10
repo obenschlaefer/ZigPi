@@ -30,7 +30,7 @@ Here you will find instructions on how to install Zigbee2mqtt on a Raspberry Pi.
 7. Install Heimdall (Docker Container
 
 
-## 1. Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)
+## 1. - Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)
 
 Um den Versionstand des Bootloaders herauszufinden muss man zuerst ganz normal von Micro-SD Karte booten.
 Dann per SSH verbinden und folgende Befehle ausführen
@@ -61,7 +61,7 @@ sudo apt-get update
 sudo apt-get full-upgrade
 ```
 
-## 2. Docker installieren
+## 2. - Docker installieren
 
 Verbindung per SSH 
 
@@ -90,7 +90,7 @@ Docker testen
 docker run hello-world
 ```
 
-## 3. Portainer installieren (Docker Conatiner)
+## 3. - Portainer installieren (Docker Conatiner)
 
 Docker-Volume für Portainer erstellen
 ```
@@ -105,9 +105,9 @@ docker ps
 Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten. Benutzer & Passwort anlegen!
 
 
-## 4. Mosquitto installieren (Docker Container)
+## 4. - Mosquitto installieren (Docker Container)
 
-Verzeichnisse und config-file anlegen:
+### 4.1 - Verzeichnisse und config-file anlegen:
 
 ```
 cd
@@ -127,44 +127,43 @@ listener 1883
 allow_anonymous true
 ```
 Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
+___
 
-Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
+### 4.2 - Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
 **Neuen Container erstellen - Add Container:**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/132c130f-d9e1-4a49-b9ee-ba88e748e02d)
-
+___
 **Container-Einstellungen:**
 
-Name für Container vergeben: _ _mosquitto_ _
+**Name für Container vergeben:** 	mosquitto
 
-Image:  _ _eclipse-mosquitto:latest_ _
-Ports:  _ _1883 - 1883 TCP_ _
-	      _ _9001 - 9001 TCP_ _
+**Image:**  	eclipse-mosquitto:latest
+
+**Ports:**  	1883 - 1883 TCP
+		9001 - 9001 TCP
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
+___
+### **Volumes:**
 
-**Volumes:**
+**Container**: /mosquitto --> **Host:** /home/pi/mosquitto -- >**Bind**
 
-**Container**: /mosquitto		
-**Host:** /home/pi/mosquitto		
-**Bind**
+**Container:** /mosquitto/data --> **Host:** /home/pi/mosquitto/data --> **Bind**
 
-**Container:** /mosquitto/data		
-**Host:** /home/pi/mosquitto/data	
-**Bind**
+**Container:** /mosquitto/log --> **Host:** /home/pi/mosquitto/log -->**Bind**
 
-**Container:** /mosquitto/log		
-**Host:** /home/pi/mosquitto/log	
-**Bind**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
+___
 
-**Restart policy:** Always
+### **Restart policy:** Always
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
+___
 
-**Deploy Container**
+### **Deploy Container**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/bb414b08-c9d6-4f39-ae37-ecdcbeb5acc1)
 

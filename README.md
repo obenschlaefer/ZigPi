@@ -129,7 +129,9 @@ allow_anonymous true
 Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
 ___
 
-### 4.2 - Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
+### 4.2 - Portainer Container anlegen und konfigurieren 
+
+UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
 **Neuen Container erstellen - Add Container:**
 
@@ -142,6 +144,7 @@ ___
 **Image:**  	eclipse-mosquitto:latest
 
 **Ports:**  	1883 - 1883 TCP
+
 		9001 - 9001 TCP
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)

@@ -240,6 +240,13 @@ Die ```mosquitto.conf``` wird hier um die ```Authentication``` erweitert, und so
 
 Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem angelegten ```User``` und dem ```Password```
 
+<img width="688" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/f25bd488-fe8d-4f8e-b8b9-e4cfd48d4b39">
+
+
+- Erfolgreiche Verbindung (Beispielansicht -sieht bei euch anders aus!)
+  
+<img width="1055" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/2829285d-6871-485f-b958-84d8dae10626">
+
 
 
 

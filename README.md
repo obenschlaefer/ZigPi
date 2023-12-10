@@ -210,11 +210,11 @@ Wenn sich der MQTT-Explorer erfolgreich mit dem Broker verbindet, kann das Progr
 
 - Dieser Befehl legt den Benutzer (User) ```admin``` an. Wenn ein anderer Name gewünscht ist, den Befehl entsprechend ändern!
 
-- Mit ```Enter``` bestätigwn und dann das gewünschte ```Password``` engeben. Die Eingabe erfolgt verdeckt - d.h. sie wird nicht angezeigt.
+- Mit ```Enter``` bestätigen und dann das gewünschte ```Password``` engeben. Die Eingabe erfolgt verdeckt - d.h. sie wird nicht angezeigt.
 
 <img width="457" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/0d0c9091-2dee-44e9-8b7e-3f40059d6f43">
 
-- im nächten Schritt auf ```Disconnect``` klicken, um die Container-Console zu schließen.
+- im nächsten Schritt auf ```Disconnect``` klicken, um die Container-Console zu schließen.
 - Anschließend per ```SSH``` mit dem Raspberry Pi verbinden, und in der Console folgenden Befehle eingeben:
 
 ```
@@ -236,9 +236,9 @@ password_file /mosquitto/config/password.txt
 ```
 Die ```mosquitto.conf``` wird hier um die ```Authentication``` erweitert, und so schlussendlich sicher gemacht.
 
-- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen. So wird die vorhandene ```mosquitto.conf``` mit den Änderunghen übwerschrieben.
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen. So wird die vorhandene ```mosquitto.conf``` mit den Änderunghen übwerschreiben.
 
-
+Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem angelegten ```User``` und dem ```Password```
 
 
 

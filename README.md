@@ -103,3 +103,30 @@ docker ps
 ```
 
 Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten. Benutzer & Passwort anlegen!
+
+
+## 4. Mosquitto installieren (Docker Container)
+
+Verzeichnisse und config-file anlegen:
+
+```
+cd
+sudo mkdir -p mosquitto/config
+sudo nano mosquitto/config/mosquitto.conf
+```
+Nano Editor öffnet sich mit der zuvor erstellten ```mosquitto.conf```
+
+Folgenden Inhalt in die ```mosquitto.conf``` hereinkopieren: 
+```
+persistence true
+persistence_location /mosquitto/data/
+log_dest file /mosquitto/log/mosquitto.log
+listener 1883
+
+## Authentication ##
+allow_anonymous true
+```
+Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
+
+Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
+

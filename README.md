@@ -130,3 +130,43 @@ Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
 
 Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
+**Neuen Container erstellen - Add Container:**
+
+![image](https://github.com/obenschlaefer/beepi/assets/79227566/132c130f-d9e1-4a49-b9ee-ba88e748e02d)
+
+**Container-Einstellungen:**
+
+Name für Container vergeben: _ _mosquitto_ _
+
+Image:  _ _eclipse-mosquitto:latest_ _
+Ports:  _ _1883 - 1883 TCP_ _
+	      _ _9001 - 9001 TCP_ _
+
+![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
+
+Volumes:
+Container: _ _/mosquitto_ _		    Host: _ _/home/pi/mosquitto_ _		    Bind
+Container: _ _/mosquitto/data_ _	Host: _ _/home/pi/mosquitto/data_ _	  Bind
+Container: _ _/mosquitto/log_ _	  Host: _ _/home/pi/mosquitto/log_ _  	Bind
+
+![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
+
+Restart policy:
+_ _Always_ _
+
+![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
+
+**Deploy Container**
+
+![image](https://github.com/obenschlaefer/beepi/assets/79227566/bb414b08-c9d6-4f39-ae37-ecdcbeb5acc1)
+
+
+
+
+
+
+
+
+
+
+

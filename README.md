@@ -150,7 +150,9 @@ ___
 **Image:**  	eclipse-mosquitto:latest
 
 **Ports:**	1883 - 1883 TCP
-		9001 - 9001 TCP
+		
+  9001 - 9001 TCP
+
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
 ___

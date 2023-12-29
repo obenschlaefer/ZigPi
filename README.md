@@ -363,30 +363,37 @@ Beispiel für die MQTT-Server URL:
 
 ## 5.1 Konfiguraton des Docker-Containers mit Portainer
 
+- Portainer öffnen: 
+UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
+
 - Neuen Container anlegen und entsprechend der fiolgenden Vorgaben Konfigurieren:
   
-Name vergeben: ```zigbee2mqtt```
-Image: ```koenkk/zigbee2mqtt:latest```
-Ports: 8080 - 8080 TCP
+**Name:** ```zigbee2mqtt```
 
-Command & Logging
-Driver: json-file
-2x add logging driver option
-option: max-file	value: 5
-option: max-size	value: 10m
+**Image:** ```koenkk/zigbee2mqtt:latest```
 
-Volumes
-Container: /app/data		Host:  /home/pi/zigbee2mqtt/data	Bind
-Container: /run/udev		Host: /run/udev			Bind (Read-only) (Nur bei USB-Dongle)
+**Ports:** ```8080 - 8080 TCP```
 
-Restart policy
-always
+**Command & Logging**
 
-Runtime & Ressources (nur bei USB-Dongle)
-Host: /dev/zigbee-stick	container: /dev/ttyACM0 (entspricht dem Eintrag in "configuration.yaml")
+**Driver:** ```json-file```
+
+- Klicke 2x auf ```add logging driver option```
+**option:** ```max-file```	**value:** ```5```
+**option:** ```max-size```	**value:** ```10m```
+
+**Volumes**
+**Container:** ```/app/data```		**Host:**  ```/home/pi/zigbee2mqtt/data```	```Bind```
+**Container:** ```/run/udev```		**Host:** ```/run/udev```			```Bind``` (Read-only) 
+
+**Restart policy**
+```always```
+
+**Runtime & Ressources**
+**Host:** ```/dev/zigbee-stick```	**container:** ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
  
-Deploy container! 
+- Deploy container & kurz warten!
 
-Zigbee2mqtt Ui: http://[RaspberryPi-IP]:8080 
+Zigbee2mqtt Ui im Browswer aufrufen: ```http://[RaspberryPi-IP]:8080```
 
 

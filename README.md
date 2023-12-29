@@ -379,21 +379,30 @@ UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 **Driver:** ```json-file```
 
 - Klicke 2x auf ```add logging driver option```
-**option:** ```max-file```	**value:** ```5```
-**option:** ```max-size```	**value:** ```10m```
+**option:** ```max-file```
+**value:** ```5```
+**option:** ```max-size```
+**value:** ```10m```
 
 **Volumes**
-**Container:** ```/app/data```		**Host:**  ```/home/pi/zigbee2mqtt/data```	```Bind```
-**Container:** ```/run/udev```		**Host:** ```/run/udev```			```Bind``` (Read-only) 
+**Container:** ```/app/data```		
+**Host:**  ```/home/pi/zigbee2mqtt/data```	```Bind```
+
+**Container:** ```/run/udev```		
+**Host:** ```/run/udev```			```Bind``` (Read-only) 
 
 **Restart policy**
+
 ```always```
 
 **Runtime & Ressources**
-**Host:** ```/dev/zigbee-stick```	**container:** ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
+
+**Host:** ```/dev/zigbee-stick```	
+**container:** ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
  
 - Deploy container & kurz warten!
 
-Zigbee2mqtt Ui im Browswer aufrufen: ```http://[RaspberryPi-IP]:8080```
+Zigbee2mqtt Ui im Browswer aufrufen: 
+```http://[RaspberryPi-IP]:8080```
 
 

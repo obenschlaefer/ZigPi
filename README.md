@@ -309,7 +309,7 @@ cd zigbee2mqtt
 
 ```nano data/configuration.yaml```
 
-ES öffnent sich der Editot Nano mit der zuvor heruntergeladenen configuration.yaml. Diese bitte wie folgt anpassen:
+Es öffnent sich der Editor ```Nano``` mit der zuvor heruntergeladenen ```configuration.yaml```. Diese bitte wiefolgt anpassen:
 
 ```
 # Inhalt configuration.yaml (USB-Gateway)
@@ -339,7 +339,8 @@ frontend:
   port: 8080
 ```
 
+!! Wichtig: ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad zum USB-Gateway. Ausßerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab istalliert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eure Pi rein incl- dem Prt, der vorher im Docker Container freigegeben wurde.
 
-
-
+Beispiel für die MQTT-Server URL:
+```server: mqtt://172.17.31.113:1883```
 

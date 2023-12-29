@@ -253,7 +253,7 @@ Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem 
 
 # 5. Zigbee2MQTT in Docker installieren (USB-Gateway-Konfig)
 
-Wenn du ein Netzwerkgateway verwendest, kannst du zum Punkt 6 springen.
+Wenn du ein Netzwerkgateway verwendest, kannst du zu Punkt 6 springen.
 
 - USB-Gateway (Dongle) einstecken.
 
@@ -284,14 +284,12 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="z
 
 Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jeweils eure ID eingetragen werden
 
-- Datei speichern und Nano beenden
+- Datei speichern und Nano beenden:
 
 ```
-Strg - x
+Strg + x
 ```
-und mit 
-```y``` 
-bestätigen
+und mit ```y``` bestätigen
 
 - Jetzt ein Neustart:
 ```
@@ -362,4 +360,33 @@ frontend:
 
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
+
+## 5.1 Konfiguraton des Docker-Containers mit Portainer
+
+- Neuen Container anlegen und entsprechend der fiolgenden Vorgaben Konfigurieren:
+  
+Name vergeben: ```zigbee2mqtt```
+Image: ```koenkk/zigbee2mqtt:latest```
+Ports: 8080 - 8080 TCP
+
+Command & Logging
+Driver: json-file
+2x add logging driver option
+option: max-file	value: 5
+option: max-size	value: 10m
+
+Volumes
+Container: /app/data		Host:  /home/pi/zigbee2mqtt/data	Bind
+Container: /run/udev		Host: /run/udev			Bind (Read-only) (Nur bei USB-Dongle)
+
+Restart policy
+always
+
+Runtime & Ressources (nur bei USB-Dongle)
+Host: /dev/zigbee-stick	container: /dev/ttyACM0 (entspricht dem Eintrag in "configuration.yaml")
+ 
+Deploy container! 
+
+Zigbee2mqtt Ui: http://[RaspberryPi-IP]:8080 
+
 

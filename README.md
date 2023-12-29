@@ -259,7 +259,9 @@ Wenn du ein Netzwerkgateway verwendest, kannst du zum Punkt 6 springen.
 
 - per SSH mit dem Pi verbinden. Dann folgende Befehle ausführen:
 
-```lsusb```
+```
+lsusb
+```
 
 Ausgabe (Beispiel):
 
@@ -270,25 +272,38 @@ Wichtig: Vendor-ID und Product-ID notieren. Hier in meinem Beispiel die ```1a86`
 
 - Danach die ```99-usb-serial.rules``` datei erstellen:
 
-```sudo nano /etc/udev/rules.d/99-usb-serial.rules```
+```
+sudo nano /etc/udev/rules.d/99-usb-serial.rules
+```
 
 - Folgendes muss in die ```99-usb-serial.rules``` hereinkopiert werden
 
-```SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="zigbee-stick"```
+```
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="zigbee-stick"
+```
 
 Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jeweils eure ID eingetragen werden
 
 - Datei speichern und Nano beenden
 
-```Strg - x``` und mit ```y``` bestätigen
+```
+Strg - x
+```
+und mit 
+```y``` 
+bestätigen
 
 - Jetzt ein Neustart:
-```sudo reboot```
+```
+sudo reboot
+```
 
-- Nacg dem  Neustart Symlink testen:
-```ls -l /dev/zigbee-stick```
+- Nach dem  Neustart Symlink testen:
+```
+ls -l /dev/zigbee-stick
+```
 
-Ausgabe (Beispiel)
+Ausgabe (Beispiel):
 ```lrwxrwxrwx 1 root root 7 Mar 30 11:28 /dev/zigbee-stick -> ttyACM0```
 
 Hinweis: Der USB-Port, hier ```ttyACM0```, muss später in der ```configuration.yaml``` eingegeben werden.
@@ -301,13 +316,17 @@ mkdir -p zigbee2mqtt/data
 cd zigbee2mqtt
 ```
 
-- Standard ```configuration.yaml``` herunterladen...
+- Standard ```configuration.yaml``` herunterladen
 
-```wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data```
+```
+wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
+```
 
-- ...  und für unser Projekt anpassen:
+- und für unser Projekt anpassen:
 
-```nano data/configuration.yaml```
+```
+nano data/configuration.yaml
+```
 
 Es öffnent sich der Editor ```Nano``` mit der zuvor heruntergeladenen ```configuration.yaml```. Diese bitte wiefolgt anpassen:
 

@@ -367,41 +367,44 @@ Beispiel für die MQTT-Server URL:
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
 - Neuen Container anlegen und entsprechend der fiolgenden Vorgaben Konfigurieren:
+
+**Allgeneine Konfiguration**
   
-**Name:** ```zigbee2mqtt```
+Name: ```zigbee2mqtt```
 
-**Image:** ```koenkk/zigbee2mqtt:latest```
+Image: ```koenkk/zigbee2mqtt:latest```
 
-**Ports:** ```8080 - 8080 TCP```
+Ports: ```8080 - 8080 TCP```
 
 **Command & Logging**
 
-**Driver:** ```json-file```
+Driver: ```json-file```
 
 - Klicke 2x auf ```add logging driver option```
-**option:** ```max-file```
-**value:** ```5```
-**option:** ```max-size```
-**value:** ```10m```
+
+option: ```max-file```
+value: ```5```
+option: ```max-size```
+value: ```10m```
 
 
 **Volumes**
 
-**Container:** ```/app/data```		
+Container: ```/app/data```		
 
-**Host:**  ```/home/pi/zigbee2mqtt/data```	```Bind```
+Host:  ```/home/pi/zigbee2mqtt/data```	```Bind```
 
-**Container:** ```/run/udev```		
+Container: ```/run/udev```		
 
-**Host:** ```/run/udev```			```Bind``` (Read-only) 
+Host: ```/run/udev```			```Bind``` (Read-only) 
 
-**Restart policy**
+Restart policy:
 ```always```
 
-**Runtime & Ressources**
+**Runtime & Ressources:**
 
-**Host:** ```/dev/zigbee-stick```	
-**container:** ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
+Host: ```/dev/zigbee-stick```	
+container: ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
  
 - Deploy container & kurz warten!
 

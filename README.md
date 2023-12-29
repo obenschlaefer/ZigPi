@@ -267,6 +267,7 @@ Ausgabe (Beispiel):
 
 Wichtig: Vendor-ID und Product-ID notieren. Hier in meinem Beispiel die ```1a86``` und die ```55d4```
 
+
 - Danach die ```99-usb-serial.rules``` datei erstellen:
 
 ```sudo nano /etc/udev/rules.d/99-usb-serial.rules```
@@ -275,9 +276,9 @@ Wichtig: Vendor-ID und Product-ID notieren. Hier in meinem Beispiel die ```1a86`
 
 ```SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="zigbee-stick"```
 
-Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jweils eure ID eingetragen werden
+Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jeweils eure ID eingetragen werden
 
-- Datei speichern und Nanao beenden
+- Datei speichern und Nano beenden
 
 ```Strg - x``` und mit ```y``` bestätigen
 
@@ -292,16 +293,51 @@ Ausgabe (Beispiel)
 
 Hinweis: Der USB-Port, hier ```ttyACM0```, muss später in der ```configuration.yaml``` eingegeben werden.
 
-- Im nächetn Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
+
+- Im näschten Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
 ```
 cd
 mkdir -p zigbee2mqtt/data
 cd zigbee2mqtt
 ```
 
-wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
+- Standard ```configuration.yaml``` herunterladen...
 
-nano data/configuration.yaml
+```wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data```
+
+- ...  und für unser Projekt anpassen:
+
+```nano data/configuration.yaml```
+
+ES öffnent sich der Editot Nano mit der zuvor heruntergeladenen configuration.yaml. Diese bitte wie folgt anpassen:
+
+```
+# Inhalt configuration.yaml (USB-Gateway)
+# Home Assistant integration (MQTT discovery)
+homeassistant: false
+
+# allow new devices to join
+permit_join: true
+
+# MQTT settings
+mqtt:
+  # MQTT base topic for zigbee2mqtt MQTT messages
+  base_topic: zigbee2mqtt
+  # MQTT server URL
+  server: mqtt://172.17.31.113:1883
+  # MQTT server authentication, uncomment if required:
+  user: 
+  password: 
+
+# Serial settings
+serial:
+  # Location of CC2531 USB sniffer
+  port: /dev/ttyACM0  
+advanced:
+  network_key: GENERATE
+frontend:
+  port: 8080
+```
 
 
 

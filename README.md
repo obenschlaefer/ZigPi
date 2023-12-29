@@ -368,7 +368,7 @@ UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
 - Neuen Container anlegen und entsprechend der fiolgenden Vorgaben Konfigurieren:
 
-**Allgeneine Konfiguration**
+**Allgeneine Konfiguration:**
   
 Name: ```zigbee2mqtt```
 
@@ -376,7 +376,7 @@ Image: ```koenkk/zigbee2mqtt:latest```
 
 Ports: ```8080 - 8080 TCP```
 
-**Command & Logging**
+**Command & Logging:**
 
 Driver: ```json-file```
 
@@ -388,7 +388,7 @@ option: ```max-size```
 value: ```10m```
 
 
-**Volumes**
+**Volumes:**
 
 Container: ```/app/data```		
 

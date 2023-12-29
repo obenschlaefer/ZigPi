@@ -251,6 +251,57 @@ Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem 
 <img width="1055" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/2829285d-6871-485f-b958-84d8dae10626">
 
 
+# 5. Zigbee2MQTT in Docker installieren (USB-Gateway-Konfig)
+
+Wenn du ein Netzwerkgateway verwendest, kannst du zum Punkt 6 springen.
+
+- USB-Gateway (Dongle) einstecken.
+
+- per SSH mit dem Pi verbinden. Dann folgende Befehle ausführen:
+
+```lsusb```
+
+Ausgabe (Beispiel):
+
+```Bus 001 Device 003: ID 1a86:55d4 QinHeng Electronics SONOFF Zigbee 3.0 USB Dongle Plus V2```
+
+Wichtig: Vendor-ID und Product-ID notieren. Hier in meinem Beispiel die ```1a86``` und die ```55d4```
+
+- Danach die ```99-usb-serial.rules``` datei erstellen:
+
+```sudo nano /etc/udev/rules.d/99-usb-serial.rules```
+
+- Folgendes muss in die ```99-usb-serial.rules``` hereinkopiert werden
+
+```SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="zigbee-stick"```
+
+Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jweils eure ID eingetragen werden
+
+- Datei speichern und Nanao beenden
+
+```Strg - x``` und mit ```y``` bestätigen
+
+- Jetzt ein Neustart:
+```sudo reboot```
+
+- Nacg dem  Neustart Symlink testen:
+```ls -l /dev/zigbee-stick```
+
+Ausgabe (Beispiel)
+```lrwxrwxrwx 1 root root 7 Mar 30 11:28 /dev/zigbee-stick -> ttyACM0```
+
+Hinweis: Der USB-Port, hier ```ttyACM0```, muss später in der ```configuration.yaml``` eingegeben werden.
+
+- Im nächetn Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
+```
+cd
+mkdir -p zigbee2mqtt/data
+cd zigbee2mqtt
+```
+
+wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
+
+nano data/configuration.yaml
 
 
 

@@ -361,7 +361,7 @@ frontend:
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
 
-## 5.1 Konfiguraton des Docker-Containers mit Portainer
+## 5.1 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer
 
 - Portainer öffnen: 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.

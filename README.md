@@ -384,15 +384,18 @@ UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 **option:** ```max-size```
 **value:** ```10m```
 
+
 **Volumes**
+
 **Container:** ```/app/data```		
+
 **Host:**  ```/home/pi/zigbee2mqtt/data```	```Bind```
 
 **Container:** ```/run/udev```		
+
 **Host:** ```/run/udev```			```Bind``` (Read-only) 
 
 **Restart policy**
-
 ```always```
 
 **Runtime & Ressources**

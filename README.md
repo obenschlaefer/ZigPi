@@ -494,7 +494,8 @@ advanced:
 frontend:
   port: 8080
 ```
-**!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad (IP-Adresse) zum LAN-Gateway. Beispiel ```port: tcp://172.17.31.68:6638```
+**!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad (IP-Adresse) zum LAN-Gateway. 
+Beispiel ```port: tcp://172.17.31.68:6638```
 
 Außerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
 

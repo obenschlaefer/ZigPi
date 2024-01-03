@@ -253,7 +253,7 @@ Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem 
 <img width="1055" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/2829285d-6871-485f-b958-84d8dae10626">
 
 
-# 5. Zigbee2MQTT in Docker installieren und konfigurieren
+# 5. Zigbee2MQTT in Docker installieren und konfigurieren (USB-Gateway)
 
 ## 5.1 USB-Gateway einrichten
 
@@ -367,7 +367,7 @@ frontend:
   port: 8080
 ```
 
-!! Wichtig: ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad zum USB-Gateway. Ausßerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab istalliert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eure Pi rein incl- dem Prt, der vorher im Docker Container freigegeben wurde.
+**!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad zum USB-Gateway. Außerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
 
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
@@ -412,7 +412,7 @@ Container: ```/run/udev```
 
 Host: ```/run/udev```			```Bind``` (Read-only) 
 
-<img width="1672" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/84177708-f4e4-49eb-9798-dfe5ba5f854e">
+<img width="1629" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/9857f007-e89a-463b-9b3a-0af0f9773bd0">
 
 **Restart policy:**
 
@@ -440,3 +440,63 @@ Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen:
 
 <img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
 Das Bild zeigt ein Beispiel mit bereits gepairten Devices. Die Erstansicht sieht bei euch anders aus (ohne Devices)!
+
+## 6. Zigbee2MQTT in Docker installieren und konfigurieren (USB-Gateway)
+
+Wenn ein Netzwerkgateway verwendest wird, dann wie folgt vorgehen:
+
+- per SSH mit dem Pi verbinden. Dann folgende Befehle ausführen:
+
+- Im näschten Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
+```
+cd
+mkdir -p zigbee2mqtt/data
+cd zigbee2mqtt
+```
+
+- Standard ```configuration.yaml``` herunterladen
+
+```
+wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
+```
+
+- und für unser Projekt anpassen:
+
+```
+nano data/configuration.yaml
+```
+
+Es öffnent sich der Editor ```Nano``` mit der zuvor heruntergeladenen ```configuration.yaml```. Diese bitte wiefolgt anpassen:
+
+```
+ # Home Assistant integration (MQTT discovery)
+homeassistant: false
+
+# allow new devices to join
+permit_join: true
+
+# MQTT settings
+mqtt:
+  # MQTT base topic for zigbee2mqtt MQTT messages
+  base_topic: zigbee2mqtt
+  # MQTT server URL
+  server: mqtt://172.17.31.113:1883
+  # MQTT server authentication, uncomment if required:
+  user: 
+  password: 
+
+# Serial settings
+serial:
+  # Location of CC2531 USB sniffer
+  port: tcp://172.17.31.68:6638
+advanced:
+  network_key: GENERATE
+frontend:
+  port: 8080
+```
+**!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad (IP-Adresse) zum LAN-Gateway. Beispiel ```port: tcp://172.17.31.68:6638```
+
+Außerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
+
+Beispiel für die MQTT-Server URL:
+```server: mqtt://172.17.31.113:1883```

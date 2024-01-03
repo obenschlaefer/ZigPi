@@ -6,13 +6,27 @@
 
 Hier fidest du eine Anleitung, die dir zeigt, wie du Zigbee2mqtt auf einem Raspberry Pi zu installieren kannst. Dabei geht diese Anleitung alles Schrit füt Schitt durch.
 
-Wenn du mich und meine Arbeit unterstützen möchtest, dann würde ich mich freuen, wenn du deine Projekt-Hardware" über meine Affiliate-Links (Amazon) bestellst. Das kostet dich keinen Cent mehr, aber hilft mir, auch weiterhin Prjekte dieser Art umzusetzten. Vielen Dank!
+**Wie "funktioniert" deise Anleitung?**
+- Für Einsteiger: Am besten ist es, wenn duz alle Themenbereiche nacheinander abarbeitest. So kommst du auch als Einsteiger sichger ans Ziel. 
+- Für kleine Experten: Natürlich kannst du auch gezielt zu den einzelnen Punkten springen, wenn du in einigen Themen schon fit bist.
+- Für Experten und Profis: Du brauchst keine Anleitung ;-)
 
-Hier kommst du zur Teileliste:
+**Hier ist die Liste der verwendeten Hardware und Teile:**
+Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn du deine "Projekt-Hardware" über meine Affiliate-Links (Amazon) bestellst. Das kostet dich keinen Cent mehr, aber hilft mir auch weiterhin Projekte dieser Art umzusetzten. Vielen Dank!
 
-Du kannst alle neun Themenbereiche nacheinander abarbeiten, und kommst so auch als Einsteiger zum Ziel. Natürlich kannst du auch gezielt zu den einzelnen Punkten springen.
+Raspberry Pi 4 (8GB): https://amzn.to/48bfpEt
+M2 SSD: https://amzn.to/3RZ0Cr1
+SSD Adapter: https://amzn.to/3TIvDAC
+PoE-HAT: https://amzn.to/3v7VrvJ
+PoE-Switch: https://amzn.to/3TNgT3k
+Hue Go: https://amzn.to/48xMD0D
+Gehäuse-Schrauben: https://amzn.to/3TGoyAB
+Lüfter: https://amzn.to/3GYjmjX
+Zigbee-Gateway USB: https://amzn.to/48AddpS
+Zigbee-Gateway LAN/PoE: http://tinyurl.com/yu2mdp7e
 
-Hier findest du die Themen im Überblick. 
+
+**Hier findest du die Themen im Überblick:**
 
 1. Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)
 2. Docker installieren
@@ -25,7 +39,7 @@ Hier findest du die Themen im Überblick.
 9. Heimdall installieren (Docker Container)
 
 
-
+2024 - obenschlaefer
 
 
 

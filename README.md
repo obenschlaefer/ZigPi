@@ -13,9 +13,11 @@ Hier fidest du eine Anleitung, um Zigbee2mqtt auf einem Raspberry Pi zu installi
 2. Docker installieren
 3. Portainer installieren (Docker Container)
 4. Mosquitto installieren (Docker Container)
-5. Zigbee2mqtt installieren (Docker Container)
-6. Testumgebung mit Openhab erstellen (Docker Container)
-7. Heimdall installieren (Docker Container)
+5. Zigbee2mqtt installieren & konfigurieren - USB-Gateway (Docker Container)
+6. Zigbee2mqtt installieren & konfigurieren - LAN-Gateway (Docker Container)
+7. Testumgebung mit Openhab erstellen (Docker Container)
+8. Testumgebung mit IP-Symcon erstellen (Docker Container)
+9. Heimdall installieren (Docker Container)
 
 ##############
 English version:
@@ -138,7 +140,7 @@ allow_anonymous true
 ```
 Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
 
-## 4.2 - Docker Container anlegen und konfigurieren (Portainer) 
+## 4.2 - Docker Container anlegen und konfigurieren 
 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
@@ -600,3 +602,9 @@ Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen:
 
 <img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
 Das Bild zeigt ein Beispiel mit bereits gepairten Devices. Die Erstansicht sieht bei euch anders aus (ohne Devices)!
+
+# 7. Testumgebung mit Openhab erstellen (Docker Container)
+
+# 8. Testumgebung mit IP-Symcon erstellen (Docker Container)
+
+# 9. Heimdall installieren (Docker Container)

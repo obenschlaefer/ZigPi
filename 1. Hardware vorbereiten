@@ -1,3 +1,5 @@
+# 1 - Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken
+
 Um den Versionstand des Bootloaders herauszufinden muss man zuerst ganz normal von Micro-SD Karte booten.
 Dann per SSH verbinden und folgende Befehle ausführen
 

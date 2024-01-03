@@ -36,7 +36,7 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 
 **Hier findest du die Themen im Überblick:**
 
-1. Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)
+1. Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich) /beepi/blob/main/1.%20Hardware%20vorbereiten.md
 2. Docker installieren
 3. Portainer installieren (Docker Container)
 4. Mosquitto installieren (Docker Container)

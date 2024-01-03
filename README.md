@@ -37,14 +37,14 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 **Hier findest du die Themen im Überblick:**
 
 1. [Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)](https://github.com/obenschlaefer/beepi/blob/main/1.%20Hardware%20vorbereiten.md)
-2. Docker installieren
-3. Portainer installieren (Docker Container)
-4. Mosquitto installieren (Docker Container)
-5. Zigbee2mqtt installieren & konfigurieren - USB-Gateway (Docker Container)
-6. Zigbee2mqtt installieren & konfigurieren - LAN-Gateway (Docker Container)
-7. Testumgebung mit Openhab erstellen (Docker Container)
-8. Testumgebung mit IP-Symcon erstellen (Docker Container)
-9. Heimdall installieren (Docker Container)
+2. [Docker installieren[(https://github.com/obenschlaefer/beepi/blob/main/2.%20Docker%20installieren.md)
+3. [Portainer installieren (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/3.%20Portainer%20installieren.md)
+4. [Mosquitto installieren (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/4.%20Mosquitto%20installieren%20(Docker%20Container).md)
+5. [Zigbee2mqtt installieren & konfigurieren - USB-Gateway (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/5.%20Zigbee2MQTT%20installieren%20(USB-Gateway).md)
+6. [Zigbee2mqtt installieren & konfigurieren - LAN-Gateway (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/6.%20Zigbee2MQTT%20installieren%20(LAN-Gateway).md)
+7. [Testumgebung mit Openhab erstellen (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/7.%20Testumgebung%20mit%20Openhab%20erstellen.md)
+8. [Testumgebung mit IP-Symcon erstellen (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/8.%20Testumgebung%20mit%20IP-Symcon%20erstellen.md)
+9. [Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/9.%20Heimdall%20installieren.md)
 
 
 2024 - obenschlaefer

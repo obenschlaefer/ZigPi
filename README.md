@@ -439,4 +439,4 @@ Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen:
 ```http://[RaspberryPi-IP]:8080```
 
 <img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
-
+Das Bild zeigt ein Beispiel mit bereits gepairten Devices. Die Erstansicht sieht bei euch anders aus (ohne Devices)!

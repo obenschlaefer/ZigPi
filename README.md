@@ -7,11 +7,13 @@
 Hier fidest du eine Anleitung, die dir zeigt, wie du Zigbee2mqtt auf einem Raspberry Pi zu installieren kannst. Dabei geht diese Anleitung alles Schrit füt Schitt durch.
 
 **Wie "funktioniert" deise Anleitung?**
+
 - Für Einsteiger: Am besten ist es, wenn duz alle Themenbereiche nacheinander abarbeitest. So kommst du auch als Einsteiger sichger ans Ziel. 
 - Für kleine Experten: Natürlich kannst du auch gezielt zu den einzelnen Punkten springen, wenn du in einigen Themen schon fit bist.
 - Für Experten und Profis: Du brauchst keine Anleitung ;-)
 
 **Hier ist die Liste der verwendeten Hardware und Teile:**
+
 Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn du deine "Projekt-Hardware" über meine Affiliate-Links (Amazon) bestellst. Das kostet dich keinen Cent mehr, aber hilft mir auch weiterhin Projekte dieser Art umzusetzten. Vielen Dank!
 
 - Raspberry Pi 4 (8GB): https://amzn.to/48bfpEt

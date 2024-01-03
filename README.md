@@ -257,7 +257,7 @@ Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem 
 
 ## 5.1 USB-Gateway einrichten
 
-Wenn du ein Netzwerkgateway verwendest, kannst du zu Punkt 6 springen.
+Wenn du ein Netzwerk-Gateway (LAN-Gateway) verwendest, kannst du zu Punkt 6 springen.
 
 - USB-Gateway (Dongle) einstecken.
 
@@ -378,12 +378,14 @@ Beispiel für die MQTT-Server URL:
 Beispiel für den port:
 ```port: /dev/ttyACM0```
 
-## 5.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer
+## 5.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer (USB-Gateway)
 
 - Portainer öffnen: 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
 - Neuen Container anlegen und entsprechend der folgenden Vorgaben Konfigurieren:
+
+  <img width="197" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/7a0b2f77-dc44-43bf-944c-e7cfe651aa94">
 
 **Allgeneine Konfiguration:**
   
@@ -437,7 +439,7 @@ container: ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsp
 
 <img width="1654" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/bd83a513-948a-4882-bdc5-cb53def9ea5a">
  
-- Deploy container & kurz warten!
+**Deploy container & kurz warten - fertig!**
 
 <img width="378" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/04beca84-1933-44a5-a7ed-461090d37601">
 
@@ -530,4 +532,58 @@ Beispiel für die MQTT-Server URL:
 Beispiel für den port:
 port: tcp://172.17.31.68:6638
 
-## 6.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer
+## 6.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer (LAN-Gateway)
+
+- Portainer öffnen: 
+UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
+
+- Neuen Container anlegen und entsprechend der folgenden Vorgaben Konfigurieren:
+
+  <img width="197" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/7a0b2f77-dc44-43bf-944c-e7cfe651aa94">
+
+**Allgeneine Konfiguration:**
+  
+Name: ```zigbee2mqtt```
+
+Image: ```koenkk/zigbee2mqtt:latest```
+
+Ports: ```8080 - 8080 TCP```
+
+<img width="1433" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/237d2c00-a968-4e25-b20f-5a2efdeca3fa">
+
+**Command & Logging:**
+
+Driver: ```json-file```
+
+- Klicke 2x auf ```add logging driver option```
+
+option: ```max-file```
+value: ```5```
+option: ```max-size```
+value: ```10m```
+
+<img width="1600" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/91616488-ea10-42af-9191-cea9731d6bd8">
+
+**Volumes:**
+
+Container: ```/app/data```		
+
+Host:  ```/home/pi/zigbee2mqtt/data```	```Bind```
+
+<img width="1670" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/0b8a043b-f1b8-43af-8bfd-b82c311ae246">
+
+**Restart policy:**
+
+```always```
+
+<img width="333" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/f912c55d-3f39-4b7d-9dcd-399125ee8cdc">
+
+**Deploy container & kurz warten - fertig!**
+
+<img width="378" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/04beca84-1933-44a5-a7ed-461090d37601">
+
+Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen: 
+```http://[RaspberryPi-IP]:8080```
+
+<img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
+Das Bild zeigt ein Beispiel mit bereits gepairten Devices. Die Erstansicht sieht bei euch anders aus (ohne Devices)!

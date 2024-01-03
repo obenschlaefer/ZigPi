@@ -30,6 +30,10 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 - Zigbee-Gateway LAN/PoE: http://tinyurl.com/yu2mdp7e
 
 
+**Das Gehäuse für den Raspberry-Pi mit Platz für den POE-HAT und den M.2 Adapter (3D-Druck-files):**
+
+- https://www.thingiverse.com/thing:6266712
+
 **Hier findest du die Themen im Überblick:**
 
 1. Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)

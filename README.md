@@ -253,7 +253,9 @@ Jetzt noch einmal die Verbindung mit dem MQTT-Explorer testen - diesmal mit dem 
 <img width="1055" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/2829285d-6871-485f-b958-84d8dae10626">
 
 
-# 5. Zigbee2MQTT in Docker installieren (USB-Gateway-Konfig)
+# 5. Zigbee2MQTT in Docker installieren und konfigurieren
+
+## 5.1 USB-Gateway einrichten
 
 Wenn du ein Netzwerkgateway verwendest, kannst du zu Punkt 6 springen.
 
@@ -301,7 +303,8 @@ und mit ```y``` bestätigen
 sudo reboot
 ```
 
-- Nach dem  Neustart Symlink testen:
+- Abschließend: Nach dem Neustart Symlink testen:
+- 
 ```
 ls -l /dev/zigbee-stick
 ```
@@ -312,6 +315,8 @@ Ausgabe (Beispiel):
 Hinweis: Der USB-Port, hier ```ttyACM0```, muss später in der ```configuration.yaml``` eingegeben werden.
 
 <img width="448" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/00ce294d-a13f-4e95-a8a9-0f076a2e2396">
+
+## 5.2 Konfiguration
 
 - Im näschten Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
 ```
@@ -367,7 +372,7 @@ frontend:
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
 
-## 5.1 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer
+## 5.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer
 
 - Portainer öffnen: 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
@@ -430,7 +435,8 @@ container: ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsp
 
 <img width="378" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/04beca84-1933-44a5-a7ed-461090d37601">
 
-Zigbee2mqtt Ui im Browswer aufrufen: 
+Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen: 
 ```http://[RaspberryPi-IP]:8080```
 
+<img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
 

@@ -14,16 +14,16 @@ Hier fidest du eine Anleitung, die dir zeigt, wie du Zigbee2mqtt auf einem Raspb
 **Hier ist die Liste der verwendeten Hardware und Teile:**
 Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn du deine "Projekt-Hardware" über meine Affiliate-Links (Amazon) bestellst. Das kostet dich keinen Cent mehr, aber hilft mir auch weiterhin Projekte dieser Art umzusetzten. Vielen Dank!
 
-Raspberry Pi 4 (8GB): https://amzn.to/48bfpEt
-M2 SSD: https://amzn.to/3RZ0Cr1
-SSD Adapter: https://amzn.to/3TIvDAC
-PoE-HAT: https://amzn.to/3v7VrvJ
-PoE-Switch: https://amzn.to/3TNgT3k
-Hue Go: https://amzn.to/48xMD0D
-Gehäuse-Schrauben: https://amzn.to/3TGoyAB
-Lüfter: https://amzn.to/3GYjmjX
-Zigbee-Gateway USB: https://amzn.to/48AddpS
-Zigbee-Gateway LAN/PoE: http://tinyurl.com/yu2mdp7e
+- Raspberry Pi 4 (8GB): https://amzn.to/48bfpEt
+- M2 SSD: https://amzn.to/3RZ0Cr1
+- SSD Adapter: https://amzn.to/3TIvDAC
+- PoE-HAT: https://amzn.to/3v7VrvJ
+- PoE-Switch: https://amzn.to/3TNgT3k
+- Hue Go: https://amzn.to/48xMD0D
+- Gehäuse-Schrauben: https://amzn.to/3TGoyAB
+- Lüfter: https://amzn.to/3GYjmjX
+- Zigbee-Gateway USB: https://amzn.to/48AddpS
+- Zigbee-Gateway LAN/PoE: http://tinyurl.com/yu2mdp7e
 
 
 **Hier findest du die Themen im Überblick:**

@@ -65,7 +65,6 @@ sudo apt-get full-upgrade
 # 2. - Docker installieren
 
 
-
 Verbindung per SSH 
 
 Docker herunterladen:
@@ -110,7 +109,6 @@ docker ps
 Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten. Benutzer & Passwort anlegen!
 
 
-
 # 4. - Mosquitto installieren (Docker Container)
 
 ## 4.1 - Verzeichnisse und config-file anlegen:
@@ -133,52 +131,49 @@ listener 1883
 allow_anonymous true
 ```
 Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
-___
 
 ## 4.2 - Portainer Container anlegen und konfigurieren 
 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
-### **4.2.1 - Neuen Container erstellen - Add Container:**
+**Neuen Container erstellen - Add Container:**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/132c130f-d9e1-4a49-b9ee-ba88e748e02d)
-___
-### **4.2.2 - Container-Einstellungen:**
 
-**Name:** 	Mosquitto
+Name: 	```Mosquitto```
 
-**Image:**  	eclipse-mosquitto:latest
+Image: 	```eclipse-mosquitto:latest```
 
-**Ports:**  
-1883 - 1883 TCP
+Ports: 
+```1883 - 1883 TCP```
 
 
-9001 - 9001 TCP
+```9001 - 9001 TCP```
 
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
 ___
-### **4.2.3 - Volumes:**
+**Volumes:**
 
-**Container**: /mosquitto --> **Host:** /home/pi/mosquitto -- >**Bind**
+Container: ```/mosquitto``` Host: ```/home/pi/mosquitto``` ```Bind```
 
-**Container:** /mosquitto/data --> **Host:** /home/pi/mosquitto/data --> **Bind**
+Container: ```/mosquitto/data``` Host: ```/home/pi/mosquitto/data``` ```Bind```
 
-**Container:** /mosquitto/log --> **Host:** /home/pi/mosquitto/log -->**Bind**
+Container: ```/mosquitto/log``` Host: ```/home/pi/mosquitto/log``` ```Bind```
 
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
 ___
 
 
-### **4.2.4 - Restart policy:** 
+**Restart policy:** 
 Always
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
 ___
 
 
-### **4.2.5 - Deploy Container**
+**Deploy Container**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/bb414b08-c9d6-4f39-ae37-ecdcbeb5acc1)
 ___

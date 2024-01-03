@@ -367,10 +367,16 @@ frontend:
   port: 8080
 ```
 
-**!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad zum USB-Gateway. Außerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
+**!! Wichtig:** 
+- Bei den ```MQTT settings```` wird ```user``` und ```password``` eintragen. Außerdem wird hier bei ```server``` die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
+
+- Bei den ``` Serial settings``` wird unter ```port``` den entsprechenden Pfad zum USB-Gateway eingetragen. 
 
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
+
+Beispiel für den port:
+```port: /dev/ttyACM0```
 
 ## 5.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer
 
@@ -513,14 +519,15 @@ advanced:
 frontend:
   port: 8080
 ```
-**!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad (IP-Adresse) zum LAN-Gateway. 
+**!! Wichtig:** 
+- Bei den ```MQTT settings```` wird ```user``` und ```password``` eintragen. Außerdem wird hier bei ```server``` die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
 
-Beispiel für LAN-Gateway:
-```port: tcp://172.17.31.68:6638```
-
-Außerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
+- Bei den ``` Serial settings``` wird unter ```port``` die IP-Adresse vom LAN-Gateway und der Socket Port eingetragen. 
 
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
+
+Beispiel für den port:
+port: tcp://172.17.31.68:6638
 
 ## 6.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer

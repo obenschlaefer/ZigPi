@@ -138,7 +138,7 @@ allow_anonymous true
 ```
 Wichtig: ``` allow_anonymous true ``` wird im späteren Verlauf noch geändert!
 
-## 4.2 - Portainer Container anlegen und konfigurieren 
+## 4.2 - Docker Container anlegen und konfigurieren (Portainer) 
 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 

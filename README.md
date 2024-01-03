@@ -93,7 +93,6 @@ docker run hello-world
 ```
 
 
-
 # 3. - Portainer installieren (Docker Conatiner)
 
 Docker-Volume für Portainer erstellen
@@ -152,31 +151,43 @@ Ports:
 
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f935a7c3-72c1-4b65-868e-00facec4965b)
-___
+
 **Volumes:**
 
-Container: ```/mosquitto``` Host: ```/home/pi/mosquitto``` ```Bind```
+Container: ```/mosquitto``` 
 
-Container: ```/mosquitto/data``` Host: ```/home/pi/mosquitto/data``` ```Bind```
+Host: ```/home/pi/mosquitto``` 
 
-Container: ```/mosquitto/log``` Host: ```/home/pi/mosquitto/log``` ```Bind```
+```Bind```
+
+Container: ```/mosquitto/data``` 
+
+Host: ```/home/pi/mosquitto/data``` 
+
+```Bind```
+
+Container: ```/mosquitto/log``` 
+
+Host: ```/home/pi/mosquitto/log``` 
+
+```Bind```
 
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/d8d98f8b-131c-46d9-90c8-a1e5bbbe706b)
-___
+
 
 
 **Restart policy:** 
 Always
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/f41ed412-f7aa-4ee2-b518-5abc51a24e0a)
-___
+
 
 
 **Deploy Container**
 
 ![image](https://github.com/obenschlaefer/beepi/assets/79227566/bb414b08-c9d6-4f39-ae37-ecdcbeb5acc1)
-___
+
 
 ## **4.3 - Mosquitto testen mit MQTT-Explorer**
 

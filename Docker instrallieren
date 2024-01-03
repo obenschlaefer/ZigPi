@@ -1,0 +1,26 @@
+Verbindung per SSH 
+
+Docker herunterladen:
+```
+curl -fsSL https://get.Docker.com -o get-Docker.sh
+```
+
+Script zur Installation ausführen
+```
+sudo sh get-Docker.sh
+```
+
+Docker für aktuellen Benutzer ausführbar machen
+```
+sudo usermod -aG docker $USER
+```
+
+Benutzerrichtlinien neun laden
+```
+newgrp docker 
+```
+
+Docker testen
+```
+docker run hello-world
+```

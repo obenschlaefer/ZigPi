@@ -1,0 +1,191 @@
+# 5. Zigbee2MQTT in Docker installieren und konfigurieren (USB-Gateway)
+
+## 5.1 USB-Gateway einrichten
+
+Wenn du ein Netzwerk-Gateway (LAN-Gateway) verwendest, kannst du zu Punkt 6 springen.
+
+- USB-Gateway (Dongle) einstecken.
+
+- per SSH mit dem Pi verbinden. Dann folgende Befehle ausführen:
+
+```
+lsusb
+```
+
+Ausgabe (Beispiel):
+
+```Bus 001 Device 003: ID 1a86:55d4 QinHeng Electronics SONOFF Zigbee 3.0 USB Dongle Plus V2```
+
+Wichtig: Vendor-ID und Product-ID notieren. Hier in meinem Beispiel die ```1a86``` und die ```55d4```
+
+<img width="597" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/40a240d3-12aa-4318-93c6-b8f8b673d5f7">
+
+- Danach die ```99-usb-serial.rules``` datei erstellen:
+
+```
+sudo nano /etc/udev/rules.d/99-usb-serial.rules
+```
+
+- Folgendes muss in die ```99-usb-serial.rules``` hereinkopiert werden
+
+```
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="zigbee-stick"
+```
+
+Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jeweils eure ID eingetragen werden
+
+<img width="597" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/d8205fa2-3833-4494-9741-a0eae780cf87">
+
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen.
+
+- Jetzt ein Neustart:
+```
+sudo reboot
+```
+
+- Abschließend: Nach dem Neustart Symlink testen:
+- 
+```
+ls -l /dev/zigbee-stick
+```
+
+Ausgabe (Beispiel):
+```lrwxrwxrwx 1 root root 7 Mar 30 11:28 /dev/zigbee-stick -> ttyACM0```
+
+Hinweis: Der USB-Port, hier ```ttyACM0```, muss später in der ```configuration.yaml``` eingegeben werden.
+
+<img width="448" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/00ce294d-a13f-4e95-a8a9-0f076a2e2396">
+
+## 5.2 Konfiguration
+
+- Im näschten Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
+```
+cd
+mkdir -p zigbee2mqtt/data
+cd zigbee2mqtt
+```
+
+- Standard ```configuration.yaml``` herunterladen
+
+```
+wget https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/data/configuration.yaml -P data
+```
+
+- und für unser Projekt anpassen:
+
+```
+nano data/configuration.yaml
+```
+
+Es öffnent sich der Editor ```Nano``` mit der zuvor heruntergeladenen ```configuration.yaml```. Diese bitte wiefolgt anpassen:
+
+```
+# Inhalt configuration.yaml (USB-Gateway)
+# Home Assistant integration (MQTT discovery)
+homeassistant: false
+
+# allow new devices to join
+permit_join: true
+
+# MQTT settings
+mqtt:
+  # MQTT base topic for zigbee2mqtt MQTT messages
+  base_topic: zigbee2mqtt
+  # MQTT server URL
+  server: mqtt://172.17.31.113:1883
+  # MQTT server authentication, uncomment if required:
+  user: 
+  password: 
+
+# Serial settings
+serial:
+  # Location of CC2531 USB sniffer
+  port: /dev/ttyACM0  
+advanced:
+  network_key: GENERATE
+frontend:
+  port: 8080
+```
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen.
+  
+**!! Wichtig:** 
+- Bei den ```MQTT settings``` wird der MQTT ```user``` und das ```password``` eintragen. Außerdem wird hier bei ```server``` die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
+
+- Bei den ```Serial settings``` wird unter ```port``` den entsprechenden Pfad zum USB-Gateway eingetragen. 
+
+Beispiel für die MQTT-Server URL:
+```server: mqtt://172.17.31.113:1883```
+
+Beispiel für den port:
+```port: /dev/ttyACM0```
+
+## 5.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer (USB-Gateway)
+
+- Portainer öffnen: 
+UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
+
+- Neuen Container anlegen und entsprechend der folgenden Vorgaben Konfigurieren:
+
+  <img width="197" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/7a0b2f77-dc44-43bf-944c-e7cfe651aa94">
+
+**Allgeneine Konfiguration:**
+  
+Name: ```zigbee2mqtt```
+
+Image: ```koenkk/zigbee2mqtt:latest```
+
+Ports: ```8080 - 8080 TCP```
+
+<img width="1433" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/237d2c00-a968-4e25-b20f-5a2efdeca3fa">
+
+**Command & Logging:**
+
+Driver: ```json-file```
+
+- Klicke 2x auf ```add logging driver option```
+
+option: ```max-file```
+value: ```5```
+option: ```max-size```
+value: ```10m```
+
+<img width="1600" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/91616488-ea10-42af-9191-cea9731d6bd8">
+
+**Volumes:**
+
+Container: ```/app/data```		
+
+Host:  ```/home/pi/zigbee2mqtt/data```	```Bind```
+
+Container: ```/run/udev```		
+
+Host: ```/run/udev```			```Bind``` (Read-only) 
+
+<img width="1629" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/9857f007-e89a-463b-9b3a-0af0f9773bd0">
+
+**Restart policy:**
+
+```always```
+
+<img width="333" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/f912c55d-3f39-4b7d-9dcd-399125ee8cdc">
+
+**Runtime & Ressources:**
+
+- Klick 1x auf ```add device```
+
+folgende Eingaben sind zu machen:
+
+Host: ```/dev/zigbee-stick```	
+container: ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
+
+<img width="1654" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/bd83a513-948a-4882-bdc5-cb53def9ea5a">
+ 
+**Deploy container & kurz warten - fertig!**
+
+<img width="378" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/04beca84-1933-44a5-a7ed-461090d37601">
+
+Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen: 
+```http://[RaspberryPi-IP]:8080```
+
+<img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
+Das Bild zeigt ein Beispiel mit bereits gepairten Devices. Die Erstansicht sieht bei euch anders aus (ohne Devices)!

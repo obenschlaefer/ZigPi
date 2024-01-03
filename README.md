@@ -271,6 +271,7 @@ Ausgabe (Beispiel):
 
 Wichtig: Vendor-ID und Product-ID notieren. Hier in meinem Beispiel die ```1a86``` und die ```55d4```
 
+<img width="597" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/40a240d3-12aa-4318-93c6-b8f8b673d5f7">
 
 - Danach die ```99-usb-serial.rules``` datei erstellen:
 
@@ -285,6 +286,8 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d4", SYMLINK+="z
 ```
 
 Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den “”) --> Hier muss natürlich jeweils eure ID eingetragen werden
+
+<img width="597" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/d8205fa2-3833-4494-9741-a0eae780cf87">
 
 - Datei speichern und Nano beenden:
 
@@ -308,6 +311,7 @@ Ausgabe (Beispiel):
 
 Hinweis: Der USB-Port, hier ```ttyACM0```, muss später in der ```configuration.yaml``` eingegeben werden.
 
+<img width="448" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/00ce294d-a13f-4e95-a8a9-0f076a2e2396">
 
 - Im näschten Schritt die ```configuration.yaml``` erstellen. Dazu folgende Befehle ausführen (Verzeichnisse anlegen):
 ```
@@ -368,7 +372,7 @@ Beispiel für die MQTT-Server URL:
 - Portainer öffnen: 
 UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten.
 
-- Neuen Container anlegen und entsprechend der fiolgenden Vorgaben Konfigurieren:
+- Neuen Container anlegen und entsprechend der folgenden Vorgaben Konfigurieren:
 
 **Allgeneine Konfiguration:**
   
@@ -377,6 +381,8 @@ Name: ```zigbee2mqtt```
 Image: ```koenkk/zigbee2mqtt:latest```
 
 Ports: ```8080 - 8080 TCP```
+
+<img width="1433" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/237d2c00-a968-4e25-b20f-5a2efdeca3fa">
 
 **Command & Logging:**
 
@@ -389,6 +395,7 @@ value: ```5```
 option: ```max-size```
 value: ```10m```
 
+<img width="1600" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/91616488-ea10-42af-9191-cea9731d6bd8">
 
 **Volumes:**
 
@@ -400,15 +407,28 @@ Container: ```/run/udev```
 
 Host: ```/run/udev```			```Bind``` (Read-only) 
 
-Restart policy:
+<img width="1672" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/84177708-f4e4-49eb-9798-dfe5ba5f854e">
+
+**Restart policy:**
+
 ```always```
+
+<img width="333" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/f912c55d-3f39-4b7d-9dcd-399125ee8cdc">
 
 **Runtime & Ressources:**
 
+- Klick 1x auf ```add device```
+
+folgende Eingaben sind zu machen:
+
 Host: ```/dev/zigbee-stick```	
 container: ```/dev/ttyACM0``` (muss dem Eintrag in der "configuration.yaml"entsprechen)
+
+<img width="1654" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/bd83a513-948a-4882-bdc5-cb53def9ea5a">
  
 - Deploy container & kurz warten!
+
+<img width="378" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/04beca84-1933-44a5-a7ed-461090d37601">
 
 Zigbee2mqtt Ui im Browswer aufrufen: 
 ```http://[RaspberryPi-IP]:8080```

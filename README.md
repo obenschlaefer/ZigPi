@@ -441,9 +441,28 @@ Zum Schluss: Zigbee2mqtt Ui im Browswer aufrufen:
 <img width="1895" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/4190a7b9-ad39-4f43-a137-a33d3988397b">
 Das Bild zeigt ein Beispiel mit bereits gepairten Devices. Die Erstansicht sieht bei euch anders aus (ohne Devices)!
 
-## 6. Zigbee2MQTT in Docker installieren und konfigurieren (USB-Gateway)
+# 6. Zigbee2MQTT in Docker installieren und konfigurieren (LAN-Gateway)
 
-Wenn ein Netzwerkgateway verwendest wird, dann wie folgt vorgehen:
+Unterschiede zum USB-Gateway:
+1. Bei der Verwendung eines Netzwerkgateways entfällt logischerweise die gesamte USB-Konfiguration (Punkt 5.1 u. 5.2).
+2. Außederm ist der Inhalt der```configuraton.yaml``` anders.
+3. Die konfiguration des Docker Containers ist anders.
+   
+## 6.1 Konfiguraton LAN-Gateway (Beispiel)
+
+Wenn ein Netzwerkgateway verwendet wird, muss dieses vorab über das Web-UI konfiguriert werden:
+
+- In der Web-UI des Gateways die IP-Adresse des MQTT-Brokers eingetragen werden (Bild 1)
+- Außerdem wird der ```Socket Port``` für die Eingabe in der ```configration.yaml``` benötigt (Bild 2)
+
+Hier ein Beispiel für das LAN-Gateway, das ich verwende (Zigbee ESP32 GW)
+
+<img width="1919" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/0621b641-3511-428d-8f40-aaff85fad8cf">
+<img width="978" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/aad7518e-30d7-413f-b4ed-8f0ece508ed9">
+
+
+## 6.2 Konfiguraton (SSH-console)
+
 
 - per SSH mit dem Pi verbinden. Dann folgende Befehle ausführen:
 
@@ -495,9 +514,13 @@ frontend:
   port: 8080
 ```
 **!! Wichtig:** ```user``` und ```password``` eintragen und unter ```port``` den entsprechenden Pfad (IP-Adresse) zum LAN-Gateway. 
-Beispiel ```port: tcp://172.17.31.68:6638```
+
+Beispiel für LAN-Gateway:
+```port: tcp://172.17.31.68:6638```
 
 Außerdem wird hier noch die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
 
 Beispiel für die MQTT-Server URL:
 ```server: mqtt://172.17.31.113:1883```
+
+## 6.3 Konfiguraton des Zigbee2MQTT Docker-Containers mit Portainer

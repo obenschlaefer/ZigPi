@@ -47,7 +47,7 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 9. [Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/9.%20Heimdall%20installieren.md)
 
 
-2024 - obenschlaefer
+*2024 - obenschlaefer*
 
 
 

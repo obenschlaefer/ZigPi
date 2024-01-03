@@ -34,7 +34,7 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 
 - https://www.thingiverse.com/thing:6266712
 
-**Hier findest du die Themen im Überblick:**
+**Hier findest du die Themen der Reihe nach im Überblick:**
 
 1. [Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)](https://github.com/obenschlaefer/beepi/blob/main/1.%20Hardware%20vorbereiten.md)
 2. [Docker installieren](https://github.com/obenschlaefer/beepi/blob/main/2.%20Docker%20installieren.md)

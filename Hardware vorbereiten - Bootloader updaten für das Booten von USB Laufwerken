@@ -1,1 +1,28 @@
+Um den Versionstand des Bootloaders herauszufinden muss man zuerst ganz normal von Micro-SD Karte booten.
+Dann per SSH verbinden und folgende Befehle ausführen
 
+```
+vcgencmd bootloader_version
+sudo rpi-eeprom-update
+```
+
+Das angezeigte Datum muss  der 3. September 2020, oder neuer sein. 
+
+Wenn das Datum aktueller als der 3. September 2020 ist, oder eine Meldung kommt, dass der Raspberry Pi "up to date" ist, brucht kein Update durchgeführt werden. Der Raspberry Pi ist so aktuell, dass er schon von Werrk aus von USB botten kann.
+Wenn ein Update verfügbar ist, dann folgende Befehle ausführen
+
+```
+sudo rpi-eeprom-update -a
+sudo reboot
+```
+
+Dadruch findet en Update des Bootloaders statt. Danach wird der Raspberry Pi neugetartet und bootet ab jetzt zuerst von USB. (Bootreihenfolge wurde gändert)
+
+Micro-SD raus und (spätestens jetzt) das USB/SSD Laufwerk verbinden. Raspberry Pi einschalten und zur Erfolgskontrolle per SSH verbinden.
+
+Danach ein Update kann nicht schaden
+
+```
+sudo apt-get update 
+sudo apt-get full-upgrade
+```

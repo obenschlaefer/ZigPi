@@ -2,7 +2,7 @@
 
 **Willkommen beim ZigPi-Projekt!**
 
-Hier fidest du eine Anleitung, die dir detailliert zeigt, wie du Zigbee2mqtt auf einem Raspberry Pi zu installieren kannst. Dabei geht diese Anleitung alles Schritt füt Schritt durch. Sie richtet sich in erster Linie an Einsteiger.
+Hier fidest du eine Anleitung, die dir detailliert zeigt, wie du Zigbee2mqtt auf einem Raspberry Pi installieren kannst. Dabei geht diese Anleitung alles Schritt füt Schritt durch. Sie richtet sich in erster Linie an Einsteiger.
 
 
 ![IMG_2459](https://github.com/obenschlaefer/beepi/assets/79227566/d1ced44a-cbcc-4d95-84e9-95ad60ac32a1)

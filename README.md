@@ -209,7 +209,9 @@ Wenn sich der MQTT-Explorer erfolgreich mit dem Broker verbindet, kann das Progr
 
 - Die ```Console``` des Containers öffnet sich. Folgende Zeilen eigeben:
 
-```mosquitto_passwd -c /mosquitto/config/password.txt admin```
+```
+mosquitto_passwd -c /mosquitto/config/password.txt admin
+```
 
 - Dieser Befehl legt den Benutzer (User) ```admin``` an. Wenn ein anderer Name gewünscht ist, den Befehl entsprechend ändern!
 

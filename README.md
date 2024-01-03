@@ -304,12 +304,7 @@ Vendor-ID und Product-ID an den hervorgehobenen Stellen eingeben (zwischen den �
 
 <img width="597" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/d8205fa2-3833-4494-9741-a0eae780cf87">
 
-- Datei speichern und Nano beenden:
-
-```
-Strg + x
-```
-und mit ```y``` bestätigen
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen.
 
 - Jetzt ein Neustart:
 ```
@@ -379,7 +374,8 @@ advanced:
 frontend:
   port: 8080
 ```
-
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen.
+  
 **!! Wichtig:** 
 - Bei den ```MQTT settings``` wird der MQTT ```user``` und das ```password``` eintragen. Außerdem wird hier bei ```server``` die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
 
@@ -534,6 +530,8 @@ advanced:
 frontend:
   port: 8080
 ```
+- Nano beenden: ```strg+x``` und dann den Speichern-Dialog mit ```y``` bestätigen.
+
 **!! Wichtig:** 
 - Bei den ```MQTT settings``` wird der MQTT ```user``` und das ```password``` eintragen. Außerdem wird hier bei ```server``` die IP-Adresse + Port des MQTT-Brokers eingtragen. Diesen haben wir ja vorab installiert (Mosquitto) --> Das bedeutet: Hier kommt die IP-Adresse eures Pi rein incl. dem Port, der vorher im Docker Container freigegeben wurde.
 
@@ -581,7 +579,9 @@ value: ```10m```
 
 Container: ```/app/data```		
 
-Host:  ```/home/pi/zigbee2mqtt/data```	```Bind```
+Host:  ```/home/pi/zigbee2mqtt/data```	
+
+```Bind```
 
 <img width="1670" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/0b8a043b-f1b8-43af-8bfd-b82c311ae246">
 

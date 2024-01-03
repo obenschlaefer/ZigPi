@@ -105,12 +105,14 @@ docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9443:9443 --restart always --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data cr.portainer.io/portainer/portainer-ce:latest
 ```
 
-Zu Kontrolle: Liste alle aktiven Docker-Container anzeigen
+- Zu Kontrolle: Liste alle aktiven Docker-Container anzeigen
 ```
 docker ps
 ```
+<img width="1465" alt="image" src="https://github.com/obenschlaefer/beepi/assets/79227566/43dcd701-4700-4777-b5e2-308b965085f8">
 
-Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten. Benutzer & Passwort anlegen!
+Portainer UI im Browser mit ```https://ip-adresse-vom-Rasberry-Pi:9443``` starten. 
+Beim ersten Start: Benutzer & Passwort anlegen!
 
 
 # 4. - Mosquitto installieren (Docker Container)

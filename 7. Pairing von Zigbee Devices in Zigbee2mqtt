@@ -1,0 +1,9 @@
+# 7. Pairing von Zigbee Devices in Zigbee2mqtt
+
+Um  später die Testumgebung mit OpenHAB und IP-Symcon verwedenden zu können, brauchen wir vorhab gepairte Zigbee-Devices. Das Pairung ist vorab in Zigbee2mqtt durchzuführen.
+
+1. Hierzu einfach acu die UI von Zigbee2mqtt gehen und (fals nicht schon aktiv) das Anlernen neuer Geräte aktivieren.
+2. Dann den Kopplungs- bzw. Pairingmmodus des entsprechenden Zigbee Gerätes aktiviren (siehe Bedienungsanleitung des jeweiligen Geräts)
+3. warten, bis das Gerät gefunden wird.
+
+<img width="824" alt="image" src="https://github.com/obenschlaefer/ZigPi/assets/79227566/50e47e95-2dd7-4c15-ab2b-bc0b65a4da5d">

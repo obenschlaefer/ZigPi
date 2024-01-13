@@ -37,21 +37,29 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 **Hier findest du die Themen der Reihe nach im Überblick:**
 
 1. [Hardware vorbereiten - Bootloader updaten für das Booten von USB Laufwerken (falls erfordelich)](https://github.com/obenschlaefer/beepi/blob/main/1.%20Hardware%20vorbereiten.md)
+
 2. [Docker installieren](https://github.com/obenschlaefer/beepi/blob/main/2.%20Docker%20installieren.md)
+
 3. [Portainer installieren (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/3.%20Portainer%20installieren.md)
+
 4. [Mosquitto installieren (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/4.%20Mosquitto%20installieren%20(Docker%20Container).md)
+
 5. [Zigbee2mqtt installieren & konfigurieren - USB-Gateway (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/5.%20Zigbee2MQTT%20installieren%20(USB-Gateway).md)
+
 6. [Zigbee2mqtt installieren & konfigurieren - LAN-Gateway (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/6.%20Zigbee2MQTT%20installieren%20(LAN-Gateway).md)
+
 7. [Pairing von Zigbee Devices in Zigbee2mqtt](https://github.com/obenschlaefer/ZigPi/blob/main/7.%20Pairing%20von%20Zigbee%20Devices%20in%20Zigbee2mqtt.md)
+
 8. [Testumgebung mit Openhab erstellen (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/8.%20Testumgebung%20mit%20Openhab%20erstellen.md)
 
-8.1 [Mit dem MQTT-Binding den MQTT Broker (Bridge) erstellen und konfigurieren](https://github.com/obenschlaefer/ZigPi/blob/main/8.1%20MQTT-Binding%20MQTT%20Broker%20(Bridge)%20erstellen.md)
+   8.1 [Mit dem MQTT-Binding den MQTT Broker (Bridge) erstellen und konfigurieren](https://github.com/obenschlaefer/ZigPi/blob/main/8.1%20MQTT-Binding%20MQTT%20Broker%20(Bridge)%20erstellen.md)
 
-8.2 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (NOUS A1Z Zigbeee Steckdose)](https://github.com/obenschlaefer/ZigPi/blob/main/8.2%20Nous%20A1Z%20OpenHAB%20integration.md)
+   8.2 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (NOUS A1Z Zigbeee Steckdose)](https://github.com/obenschlaefer/ZigPi/blob/main/8.2%20Nous%20A1Z%20OpenHAB%20integration.md)
 
-8.3 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA RODRET)](https://github.com/obenschlaefer/ZigPi/blob/main/8.3%20IKEA%20RODRET%20(Taster)%20OpenHAB%20integration.md)
+   8.3 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA RODRET)](https://github.com/obenschlaefer/ZigPi/blob/main/8.3%20IKEA%20RODRET%20(Taster)%20OpenHAB%20integration.md)
 
-8.4 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA TRADFRI)](https://github.com/obenschlaefer/ZigPi/blob/main/8.4%20IKEA%20TRADFRI%20(Steckdose)%20OpenHAB%20integration.md)
+   8.4 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA TRADFRI)](https://github.com/obenschlaefer/ZigPi/blob/main/8.4%20IKEA%20TRADFRI%20(Steckdose)%20OpenHAB%20integration.md)
+
 9. [Testumgebung mit IP-Symcon erstellen (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/9.%20Testumgebung%20mit%20IP-Symcon%20erstellen.md)
 [Special: Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/Special%3A%20Heimdall%20installieren.md)
 

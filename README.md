@@ -44,8 +44,12 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 6. [Zigbee2mqtt installieren & konfigurieren - LAN-Gateway (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/6.%20Zigbee2MQTT%20installieren%20(LAN-Gateway).md)
 7. [Pairing von Zigbee Devices in Zigbee2mqtt](https://github.com/obenschlaefer/ZigPi/blob/main/7.%20Pairing%20von%20Zigbee%20Devices%20in%20Zigbee2mqtt.md)
 8. [Testumgebung mit Openhab erstellen (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/8.%20Testumgebung%20mit%20Openhab%20erstellen.md)
-9. [Testumgebung mit IP-Symcon erstellen (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/9.%20Testumgebung%20mit%20IP-Symcon%20erstellen.md)
-10. [Special: Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/Special%3A%20Heimdall%20installieren.md)
+   8.1 [Mit dem MQTT-Binding den MQTT Broker (Bridge) erstellen und konfigurieren](https://github.com/obenschlaefer/ZigPi/blob/main/8.1%20MQTT-Binding%20MQTT%20Broker%20(Bridge)%20erstellen.md)
+   8.2 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (NOUS A1Z Zigbeee Steckdose)](https://github.com/obenschlaefer/ZigPi/blob/main/8.2%20Nous%20A1Z%20OpenHAB%20integration.md)
+   8.3 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA RODRET)](https://github.com/obenschlaefer/ZigPi/blob/main/8.3%20IKEA%20RODRET%20(Taster)%20OpenHAB%20integration.md)
+   8.4 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA TRADFRI)](https://github.com/obenschlaefer/ZigPi/blob/main/8.4%20IKEA%20TRADFRI%20(Steckdose)%20OpenHAB%20integration.md)
+10. [Testumgebung mit IP-Symcon erstellen (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/9.%20Testumgebung%20mit%20IP-Symcon%20erstellen.md)
+11. [Special: Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/Special%3A%20Heimdall%20installieren.md)
 
 
 *2024 - obenschlaefer*

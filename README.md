@@ -54,7 +54,7 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
 
    8.1 [Mit dem MQTT-Binding den MQTT Broker (Bridge) erstellen und konfigurieren](https://github.com/obenschlaefer/ZigPi/blob/main/8.1%20MQTT-Binding%20MQTT%20Broker%20(Bridge)%20erstellen.md)
 
-   8.2 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (NOUS A1Z Zigbeee Steckdose)](https://github.com/obenschlaefer/ZigPi/blob/main/8.2%20Nous%20A1Z%20OpenHAB%20integration.md)
+   8.2 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (NOUS A1Z Steckdose)](https://github.com/obenschlaefer/ZigPi/blob/main/8.2%20Nous%20A1Z%20OpenHAB%20integration.md)
 
    8.3 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA RODRET)](https://github.com/obenschlaefer/ZigPi/blob/main/8.3%20IKEA%20RODRET%20(Taster)%20OpenHAB%20integration.md)
 

@@ -61,7 +61,8 @@ Wenn du mich und meine Arbeit unterstützen möchtest, dann freue ich mich, wenn
    8.4 [Erstellung und Konfiguration der Testumgebung mit MQTT-Items in OpenHAB (IKEA TRADFRI)](https://github.com/obenschlaefer/ZigPi/blob/main/8.4%20IKEA%20TRADFRI%20(Steckdose)%20OpenHAB%20integration.md)
 
 9. [Testumgebung mit IP-Symcon erstellen (Docker Container)](https://github.com/obenschlaefer/beepi/blob/main/9.%20Testumgebung%20mit%20IP-Symcon%20erstellen.md)
-[Special: Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/Special%3A%20Heimdall%20installieren.md)
+
+10. [Special: Heimdall installieren (Docker Container)](https://github.com/obenschlaefer/ZigPi/blob/main/Special%3A%20Heimdall%20installieren.md)
 
 
 *2024 - obenschlaefer*

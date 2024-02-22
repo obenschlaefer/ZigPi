@@ -10,7 +10,7 @@ Hier fidest du eine Anleitung, die dir detailliert zeigt, wie du Zigbee2mqtt auf
 
 **Wie "funktioniert" deise Anleitung?**
 
-- Für Einsteiger: Am besten ist es, wenn du alle Themenbereiche nacheinander abarbeitest. So kommst du auch als Einsteiger sichger ans Ziel. 
+- Für Einsteiger: Am besten ist es, wenn du alle Themenbereiche nacheinander abarbeitest. So kommst du auch als Einsteiger sicher ans Ziel. 
 - Für kleine Experten: Natürlich kannst du auch gezielt zu den einzelnen Punkten springen, wenn du in einigen Themen schon fit bist.
 - Für Experten und Profis: Du brauchst keine Anleitung ;-)
 
